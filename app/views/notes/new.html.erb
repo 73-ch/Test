@@ -1,7 +1,11 @@
 <%= form_for(@note) do |f| %>
+    
+    <p>set priority</p>
     <%= f.number_field :priority %><br>
+    <p>title</p>
     <%= f.text_field :title %><br>
+    <p>content</p>
     <%= f.text_area :content %><br>
 
-    <%= f.submit "追加" %>
+    <%= f.submit "SUBMIT" %>
 <% end %>
