@@ -1,2 +1,5 @@
-hello!!
-skdf
+<% @notes.each do |note| %>
+    title : <%= note.title %><br>
+    priority : <%= note.priority %><br>
+    content :  <%= note.content %><br>
+<% end %>
