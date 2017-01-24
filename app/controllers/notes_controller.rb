@@ -9,6 +9,11 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.create(note_params)
+    if @note.errors
+      render 'new'
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
