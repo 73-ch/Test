@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   def index
     @notes = Note.all
+    @notes = @notes.order(:priority)
   end
 
   def new
@@ -9,7 +10,7 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.create(note_params)
-    if @note.errors
+    if @note.errors.any?
       render 'new'
     else
       redirect_to root_path
@@ -17,19 +18,27 @@ class NotesController < ApplicationController
   end
 
   def edit
-
+    @note = Note.find_by(params[:id])
   end
 
   def update
-    
+    @note = Note.find_by(params[:id])
+
+    if @note.update(note_params)
+      redirect_to note_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-
+    @note = Note.find_by(params[:id])
+    @note.destroy
+    redirect_to root_path
   end
 
   def show
-    
+    @note = Note.find_by(params[:id])
   end
 
   private

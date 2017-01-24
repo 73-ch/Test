@@ -1,5 +1,5 @@
 <% @notes.each do |note| %>
-    title : <%= note.title %><br>
+    title : <%= link_to note.title, note_path(note) %><br>
     priority : <%= note.priority %><br>
     content :  <%= note.content %><br>
 <% end %>

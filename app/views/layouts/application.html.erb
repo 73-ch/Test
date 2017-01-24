@@ -66,6 +66,10 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to "new", new_note_path %>
+      <%= link_to "index", notes_path %>
+    </header>
     <h1> To Do List</h1>
     <%= yield %>
   </body>

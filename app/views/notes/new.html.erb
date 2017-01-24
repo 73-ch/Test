@@ -1,8 +1,6 @@
 <%= form_for(@note) do |f| %>
-<<<<<<< HEAD
-    
+
     <p>set priority</p>
-=======
     <% if @note.errors.any? %>
         <div id="error_explanation" class="alert alert-danger">
           <h2><%= pluralize(@note.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -14,7 +12,6 @@
         </div>
     <% end %>
 
->>>>>>> ddcebd30cb99cc5237346ab757aa76ac8e9b74ea
     <%= f.number_field :priority %><br>
     <p>title</p>
     <%= f.text_field :title %><br>

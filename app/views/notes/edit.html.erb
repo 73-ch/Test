@@ -1,0 +1,18 @@
+<%= form_for(@note) do |f| %>
+    <% if @note.errors.any? %>
+        <div id="error_explanation" class="alert alert-danger">
+          <h2><%= pluralize(@note.errors.count, "error") %> prohibited this post from being saved:</h2>
+          <ul>
+            <% @note.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.number_field :priority %><br>
+    <%= f.text_field :title %><br>
+    <%= f.text_area :content %><br>
+
+    <%= f.submit "更新" %>
+<% end %>

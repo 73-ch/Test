@@ -1,0 +1,6 @@
+title : <%= @note.title %><br>
+priority : <%= @note.priority %><br>
+content :  <%= @note.content %><br>
+
+<%= link_to "delete", note_path, method: :delete %>
+<%= link_to "edit", edit_note_path %>
