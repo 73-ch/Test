@@ -32,13 +32,13 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    @note = Note.find_by(params[:id])
+    @note = Note.find(params[:id])
     @note.destroy
     redirect_to root_path
   end
 
   def show
-    @note = Note.find_by(params[:id])
+    @note = Note.find(params[:id])
   end
 
   private
